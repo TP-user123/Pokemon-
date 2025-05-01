@@ -1,33 +1,33 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-}
-
+/* General Reset & Container */
 body {
-  background-color: #f4f6f8;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f6f8fc;
   color: #333;
 }
 
-.app {
+.container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 1rem;
 }
 
 .header {
-  font-size: 2rem;
-  font-weight: bold;
   text-align: center;
-  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  color: #ef5350;
+  margin: 2rem 0;
+  font-weight: bold;
 }
 
+/* Controls */
 .controls {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .controls input,
@@ -35,23 +35,48 @@ body {
   padding: 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 100%;
+  border-radius: 0.5rem;
 }
 
+/* Type Filters */
+.multi-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.type-filter {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  background: #e3f2fd;
+  border: 1px solid #90caf9;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.type-filter input {
+  margin-right: 0.3rem;
+}
+
+/* Pokemon Cards */
 .pokemon-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .pokemon-card {
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  text-align: center;
+  background: white;
   padding: 1rem;
-  transition: transform 0.2s ease;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s;
 }
 
 .pokemon-card:hover {
@@ -59,59 +84,118 @@ body {
 }
 
 .pokemon-card img {
-  width: 96px;
-  height: 96px;
+  height: 80px;
 }
 
+/* Favorite Button */
+.pokemon-card button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #ffca28;
+}
+
+/* Detail View */
+.pokemon-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.pokemon-detail h2 {
+  text-transform: capitalize;
+  font-size: 2rem;
+  color: #1976d2;
+}
+
+.pokemon-img {
+  width: 120px;
+  margin: 1rem 0;
+}
+
+.stats ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stats li {
+  margin-bottom: 0.5rem;
+}
+
+.evolution-chain ul {
+  list-style-type: circle;
+  margin-left: 1.2rem;
+}
+
+/* Back Link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  background: #90caf9;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  background: #cfd8dc;
+  cursor: default;
+}
+
+/* Favorites */
+.favorites-section {
+  margin-top: 2rem;
+}
+
+/* Status & Error */
 .status {
   text-align: center;
+  padding: 1rem;
   font-size: 1.2rem;
-  padding: 2rem;
+  color: #666;
 }
 
 .status.error {
   color: red;
 }
 
-@media (min-width: 600px) {
+/* Responsive Design */
+@media (max-width: 768px) {
   .controls {
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
   }
 
-  .controls input,
-  .controls select {
-    width: 48%;
-  }
-}
-
-@media (min-width: 768px) {
-  .controls {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .pokemon-list {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 599px) {
-  .controls input,
-  .controls select {
-    width: 100%;
-  }
-
-  .pokemon-card {
-    padding: 0.8rem;
+  .pokemon-card img {
+    height: 60px;
   }
 
   .pokemon-card h3 {
     font-size: 1rem;
   }
 
-  .pokemon-card p {
-    font-size: 0.9rem;
+  .pokemon-detail {
+    padding: 1rem;
   }
 }
+

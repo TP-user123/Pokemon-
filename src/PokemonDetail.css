@@ -1,0 +1,121 @@
+.pokemon-detail.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: linear-gradient(to bottom right, #fdfcfb, #e2d1c3);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    color: #333;
+  }
+  
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 24px;
+    background: #fff;
+    color: #4a90e2;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: all 0.2s ease;
+  }
+  
+  .back-link:hover {
+    background: #f1f1f1;
+    color: #2d76cc;
+  }
+  
+  .pokemon-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px 20px;
+    background: #ffffffc5;
+    text-align: center;
+  }
+  
+  .pokemon-img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+  }
+  
+  .pokemon-header h2 {
+    font-size: 2rem;
+    margin: 10px 0 5px;
+    text-transform: capitalize;
+  }
+  
+  .pokemon-header p {
+    margin: 2px 0;
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .pokemon-section {
+    padding: 20px 30px;
+    background: #fff;
+    margin: 15px 20px;
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  .pokemon-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: #444;
+    border-left: 5px solid #4a90e2;
+    padding-left: 10px;
+  }
+  
+  .pokemon-section p,
+  .pokemon-section li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    line-height: 1.5;
+  }
+  
+  .stats ul,
+  .evolution-chain ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+  }
+  
+  .stats li,
+  .evolution-chain li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #ddd;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: #444;
+  }
+  
+  @media (max-width: 600px) {
+    .pokemon-detail.container {
+      margin: 20px 10px;
+    }
+  
+    .pokemon-section {
+      margin: 10px 10px;
+      padding: 15px 20px;
+    }
+  
+    .pokemon-header h2 {
+      font-size: 1.6rem;
+    }
+  
+    .pokemon-img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  
